@@ -1,0 +1,131 @@
+* {
+    --white-color: white;
+    --half-black-color: rgba(0, 0, 0, 0.5);
+    --center-align: center;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: url('../image/bg.jpg') center/cover no-repeat fixed;
+}
+
+@media (min-width: 1024px) {
+  .body {
+    flex-direction: row;
+  }
+}
+
+.caption {
+    display: flex;
+    width: 100%;
+    align-items: var(--center-align);
+    justify-content: var(--center-align);
+    padding: 1.5rem;
+    text-align: var(--center-align);
+}
+
+.caption > div {
+    display: flex;
+    flex-direction: column;
+    align-items: var(--center-align);
+    width: 100%;
+}
+
+/* for mobile */
+.caption .flex {
+    justify-content: var(--center-align);
+    margin-bottom: 0.5rem;
+    gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+    .caption {
+        width: 50%;
+        text-align: left;
+    }
+
+    .caption > div {
+        align-items: flex-start;
+    }
+
+    .caption .flex {
+        justify-content: flex-start;
+    }
+}
+
+.exoverse {
+  font-size: 3rem; 
+  font-weight: 700; 
+  background-image: linear-gradient(to right, #007FFF, #7DF9FF, #FF0090); 
+  -webkit-background-clip: text; 
+  background-clip: text; 
+  color: transparent; 
+}
+
+@media (min-width: 1024px) {
+    .exoverse {
+        font-size: 5rem;  
+    }
+}
+
+.form {
+  width: 100%; 
+  display: flex; 
+  align-items: var(--center-align); 
+  justify-content: var(--center-align); 
+  padding: 1.5rem; 
+  background-color: var(--half-black-color);
+}
+
+@media (min-width: 1024px) { 
+  .form {
+    width: 50%; 
+    padding: 3rem; 
+  }
+}
+
+.form > div {
+  width: 100%; 
+  max-width: 42rem; 
+  background: rgba(255, 255, 255, 0.1); 
+  border-radius: 1rem; 
+  padding: 3rem; 
+  box-shadow: 0 10px 15px var(--half-black-color); 
+}
+
+
+.button {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(to right, #007FFF, #7DF9FF, #FF0090);
+    color: black;
+    font-weight: 600;
+    text-align: var(--center-align);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 10px 15px -3px var(--half-black-color), 0 4px 6px -2px var(--half-black-color); 
+    transition: transform 0.15s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.02); 
+}
+
+.button:active {
+  transform: scale(1);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem; 
+  text-align: var(--center-align);
+  color: var(--white-color);
+  font-size: 0.875rem; 
+  background-color: var(--half-black-color); 
+  backdrop-filter: blur(5px);
+}
