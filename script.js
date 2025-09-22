@@ -34,5 +34,17 @@ function toggleCnfrmPwd() {
 
 document.getElementById('signupForm').addEventListener('submit', e => {
     e.preventDefault();
+    
+    const password = document.getElementById('pwd').value.trim();
+    const confirmPassword = document.getElementById('cnfrmPwd').value.trim();
+    
+    if (password !== confirmPassword) {
+        alert('Passwords do not match! Try again.');
+        // Optionally, add visual feedback by focusing on the confirm password field
+        document.getElementById('cnfrmPwd').focus();
+        return;
+    }
+
     alert('Account created successfully! (This is just a demo.)');
+
 });
